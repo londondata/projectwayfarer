@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 class HeroCarousel extends Component {
     render() {
         return (
-            <Carousel>
+            <Carousel className="caro-size">
                 <div>
                     <img src="https://www.sydney.com/sites/sydney/files/styles/full_height_image/public/2018-02/syd-1-1_0.jpg" />
                 </div>
