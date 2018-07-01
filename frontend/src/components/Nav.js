@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
+import SignUp from './SignUp'
 import logo from '../logo.svg'
 
 
@@ -10,7 +11,6 @@ class Nav extends Component {
 
   render() {
     const { activeItem } = this.state
-
     return (
       <Menu stackable inverted size='large'>
         <Menu.Item>
@@ -19,13 +19,9 @@ class Nav extends Component {
         <Menu.Item name='Best Wayfarer' active={activeItem === 'Best Wayfarer'} onClick={this.handleItemClick} />
 
         <Menu.Menu position='right'>
-          <Menu.Item name='signin' active={activeItem === 'signin'} onClick={this.handleItemClick}>
-            Sign In
-          </Menu.Item>
+          <SignUp isExistUser={true} />
 
-          <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-            Sign Up
-          </Menu.Item>
+          <SignUp isExistUser={false} />
         </Menu.Menu>
 
       </Menu>
