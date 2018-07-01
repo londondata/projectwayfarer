@@ -7,3 +7,12 @@ body {
 #logo {
   width: 5%;
 }
+
+.nav-test {
+   height: 4em;
+}
+
+.caro-size{
+   margin: 0 auto;
+   width: 65vw;
+}
