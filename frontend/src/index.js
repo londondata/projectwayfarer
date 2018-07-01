@@ -4,6 +4,15 @@ import './index.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux'
+import configureStore from './configureStore'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const store=configureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById('root'))
+
+registerServiceWorker()
