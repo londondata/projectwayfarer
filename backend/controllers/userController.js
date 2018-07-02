@@ -1,13 +1,7 @@
-const mongoose = require ('mongoose'),
-import User from '../models';
-
-// // get all users
-// app.get('/users', (req, res) => {
-//     db.User.find({}, (err, allUsers) => {
-//       if(err) { return console.log(err) }
-//       res.json({ users: allUsers })
-//     });
-// });
+const mongoose = require ('mongoose');
+const User = require('../models/user.js');
+const express = require('express');
+const app = express();
 
 
 //USERS: create
