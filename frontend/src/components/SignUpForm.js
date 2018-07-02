@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form, Grid } from 'semantic-ui-react'
 
 const options = [
   { key: '0', text: 'Sydney', value: 'sydney' },
@@ -17,33 +17,32 @@ class SignUpForm extends Component {
 
   render() {
     const { value } = this.state
-    console.log(this.props.isExistUser)
     const isExistUser = (boolean) => {
       if(boolean) {
-         return(
-            <Form>
-              <Form.Group widths='equal'>
-                <Form.Input fluid label='Username' placeholder='Username' />
-                <Form.Input fluid label='Password' placeholder='Password' type='password'/>
-                <Form.Select fluid label='City' options={options} placeholder='City' />
-              </Form.Group>
+        return (
 
-              <Form.Checkbox label='I agree to the Terms and Conditions' />
-           <Form.Button>Submit</Form.Button>
-            </Form>
-         )
+          <Form>
+            <Grid.Column width={7}>
+              <Form.Input fluid label='Username' placeholder='Username' />
+              <Form.Input fluid label='Password' placeholder='Password' type='password' />
+              <Form.Button>Submit</Form.Button>
+            </Grid.Column>
+          </Form>
+
+        )
       }
-      else {return(
-
-               <Form>
-                <Form.Group widths='equal'>
-                   <Form.Input fluid label='Username' placeholder='Username' />
-                   <Form.Input fluid label='Password' placeholder='Password' type='password'/>
-                </Form.Group>
-                <Form.Button>Submit</Form.Button>
-               </Form>
-
-         )
+      else {
+        return (
+          <Form>
+            <Grid.Column width={7}>
+              <Form.Input fluid label='Username' placeholder='Username' />
+              <Form.Input fluid label='Password' placeholder='Password' type='password' />
+              <Form.Select fluid label='City' options={options} placeholder='City' />
+              <Form.Checkbox label='I agree to the Terms and Conditions' />
+              <Form.Button>Submit</Form.Button>
+            </Grid.Column>
+          </Form>
+        )
       }
    }
     return (
