@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Segment } from 'semantic-ui-react'
 import CitiesList from './CitiesList'
+import PostContainer from './PostContainer'
 
 class CitiesContainer extends Component {
+    
     render() {
 
         return (
@@ -13,11 +15,7 @@ class CitiesContainer extends Component {
                    <CitiesList />
                  </Grid.Column>
                  <Grid.Column width={9}>
-                    <Segment>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                       </p>
-                    </Segment>
+                    <PostContainer />
                  </Grid.Column>
               </Grid>
            </main>

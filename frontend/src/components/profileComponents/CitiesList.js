@@ -4,9 +4,10 @@ import { connect } from 'react-redux'
 
 class CitiesList extends Component {
     render() {
+        
         console.log(this.props.cities[0].image);
         let cities = this.props.cities.map((city) => {
-            return <City city={city} />
+            return <City key={city.id} city={city} />
         });
         return (
             <div>
