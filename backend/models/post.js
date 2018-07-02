@@ -3,9 +3,9 @@ const mongoose = require('mongoose'),
 
 const PostSchema = new Schema({
   title: String,
-  city: String,
+  city: citySchema,
   body: String,
-  author: String,
+  author: [userSchema],
   comments: String,
 });
 
