@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import CarouselItem from './CarouselItem'
+import { connect } from 'react-redux'
 
 class HeroCarousel extends Component {
     render() {
+        console.log(this.props.cities[0].image)
+        let cities = this.props.cities.map((city) => {
+           return <CarouselItem city={city} />
+        });
         return (
             <Carousel className="caro-size">
-            <div>
-                    <img src="https://www.sydney.com/sites/sydney/files/styles/full_height_image/public/2018-02/syd-1-1_0.jpg" />
-                </div>
                 <div>
                     <img src="https://www.revistaviajesdigital.com/images/LONDRES.jpg" />
                 </div>
@@ -30,4 +31,11 @@ class HeroCarousel extends Component {
     }
 }
 
-export default HeroCarousel
+const mapStateToProps = (state) => {
+    return {
+        cities: state.cities
+    }
+}
+
+export default connect(mapStateToProps)(HeroCarousel)
+

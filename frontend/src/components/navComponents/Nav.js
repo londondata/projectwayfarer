@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import SignUp from './SignUp'
-import logo from '../logo.svg'
+import logo from '../../logo.svg'
 
 
 class Nav extends Component {

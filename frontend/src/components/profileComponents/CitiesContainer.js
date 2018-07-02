@@ -5,6 +5,7 @@ import CitiesList from './CitiesList'
 
 class CitiesContainer extends Component {
     render() {
+
         return (
            <main>
               <Grid stackable columns={2}>

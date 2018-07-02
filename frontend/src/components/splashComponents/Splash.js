@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TopicList from './TopicList'
 import HeroCarousel from './Carousel'
 
-class Main extends Component {
+class Splash extends Component {
     render() {
         return (
             <main>
@@ -14,4 +14,4 @@ class Main extends Component {
     }
 }
 
-export default Main
+export default Splash
