@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
+import CarouselItem from './CarouselItem'
 
 class HeroCarousel extends Component {
     render() {
         return (
             <Carousel className="caro-size">
-                <div>
+            <div>
                     <img src="https://www.sydney.com/sites/sydney/files/styles/full_height_image/public/2018-02/syd-1-1_0.jpg" />
                 </div>
                 <div>

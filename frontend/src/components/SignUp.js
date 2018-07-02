@@ -12,7 +12,7 @@ class SignUp extends Component {
       else {return 'Sign Up'}
    }
      return(
-        <Modal trigger={<Button>{isExistUser(this.props.isExistUser)}</Button>}>
+        <Modal trigger={<a className='item'>{isExistUser(this.props.isExistUser)}</a>}>
             <Modal.Header>{isExistUser(this.props.isExistUser)}</Modal.Header>
             <Modal.Content>
               <Modal.Description>
