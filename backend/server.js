@@ -1,8 +1,8 @@
-const app = express(),
-      express = require('express'),
+const express = require('express'),
+      app = express(),
       http = require('http'),
-      bodyparser = require('bodyparser'),
-      cors = require('cors');
+      bodyparser = require('body-parser'),
+      cors = require('cors'),
       mongoose = require('mongoose'),
       router = require('router');
 
@@ -20,20 +20,20 @@ app.use(bodyparser.json({type: '*/*'}));
 // HTML ENDPOINTS
 
 app.get('/', function (req, res) {
-  res.sendFile('views/index.html' , { root : __dirname});
+  res.sendFile('test.html' , { root : __dirname});
   // res.send("WAT");
 });
-
 
 // API ENDPOINTS
 
 //get route for controllers
-app.get('/api', controllers.api.index);
-app.get('/api/users', controllers.users.index);
-app.get('/api/posts', controllers.posts.index);
-app.get('/api/cities', controllers.cities.index);
+module.exports = function(app) {
+  app.get('/api', controllers.api.index);
+  app.get('/api/users', controllers.users.index);
+  app.get('/api/posts', controllers.posts.index);
+  app.get('/api/cities', controllers.cities.index);
 
-//post
+//post route for controllers
 app.post('/user', controller.user.index);
 app.post('user/:id', controller.user.show);
 app.post('/post', controller.post.index);
@@ -42,12 +42,12 @@ app.post('/city', controller.city.index);
 app.post('/city/:id', controller.city.show);
 
 //delete route for controllers
-app.delete('/users/:id',
+app.delete('/user/:id', controller.user.delete);
+app.delete('/post/:id', controller.post.delete);
 
-
-
+}
 
 router(app);
 const server = http.createServer(app);
 server.listen(process.env.PORT || 3000);
-console.log('Server be listenin on', port);
+console.log('Server be listenin on http://localhost:3000');

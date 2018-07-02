@@ -1,5 +1,7 @@
-const mongoose = require ('mongoose'),
-import Post from '../models';
+const mongoose = require ('mongoose');
+const Post = require('../models/post.js');
+const express = require('express');
+const app = express();
 
 //POSTS: create
 app.post('/posts', (req, res) => {
@@ -33,5 +35,6 @@ app.delete('/posts/:id', (req, res) => {
 
 //get all posts
 app.get('/posts', (req, res) => {
+  res.send('hello!');
   res.json(db.Post.all());
 })

@@ -1,5 +1,7 @@
-const mongoose = require ('mongoose'),
-import City from '../models';
+const mongoose = require ('mongoose');
+const City = require('../models/city.js');
+const express = require('express');
+const app = express();
 
 // get city by id
 app.get('/cities/:id', (req, res) => {
