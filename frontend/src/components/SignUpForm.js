@@ -24,7 +24,7 @@ class SignUpForm extends Component {
             <Form>
               <Form.Group widths='equal'>
                 <Form.Input fluid label='Username' placeholder='Username' />
-                <Form.Input fluid label='Password' placeholder='Password' />
+                <Form.Input fluid label='Password' placeholder='Password' type='password'/>
                 <Form.Select fluid label='City' options={options} placeholder='City' />
               </Form.Group>
 
@@ -38,7 +38,7 @@ class SignUpForm extends Component {
                <Form>
                 <Form.Group widths='equal'>
                    <Form.Input fluid label='Username' placeholder='Username' />
-                   <Form.Input fluid label='Password' placeholder='Password' />
+                   <Form.Input fluid label='Password' placeholder='Password' type='password'/>
                 </Form.Group>
                 <Form.Button>Submit</Form.Button>
                </Form>

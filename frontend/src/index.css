@@ -8,11 +8,35 @@ body {
   width: 5%;
 }
 
-.nav-test {
-   height: 4em;
+.ui.menu {
+   border-radius: 0;
 }
 
-.caro-size{
+.caro-size {
    margin: 0 auto;
    width: 65vw;
+}
+
+.city-box {
+   background-color: #dedede;
+   border-radius: 1em;
+   padding: .8em;
+}
+
+.city-box img {
+   padding: 0 2em 0 1em;
+}
+
+.city-box h2 {
+   font-size: 2.2em;
+   align-self: center;
+   margin: 0;
+}
+
+.city-box img {
+   height: 100px;
+}
+
+.flex-row {
+   display: flex;
 }
