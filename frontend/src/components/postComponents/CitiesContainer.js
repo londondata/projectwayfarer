@@ -5,6 +5,7 @@ import CitiesList from './CitiesList'
 import PostContainer from './PostContainer'
 
 class CitiesContainer extends Component {
+
     render() {
 
         return (

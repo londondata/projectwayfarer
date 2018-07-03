@@ -28,15 +28,14 @@ mongoose.connect('mongodb://localhost:27017');
 app.use(cors());
 app.use(bodyparser.json({type: '*/*'}));
 
-
 //ROUTES
 
 // HTML ENDPOINTS
 
 app.get('/', function (req, res) {
   res.sendFile('test.html' , { root : __dirname});
-  // res.send("WAT");
 });
+
 
 // API ENDPOINTS
 
@@ -48,20 +47,23 @@ module.exports = function(app) {
   app.get('/api/cities', controllers.cities.index);
 
 //post route for controllers
-app.post('/user', controller.user.index);
-app.post('user/:id', controller.user.show);
-app.post('/post', controller.post.index);
-app.post('/post/:id', controller.post.show);
-app.post('/city', controller.city.index);
-app.post('/city/:id', controller.city.show);
+  app.post('/user', controller.user.index);
+  app.post('user/:id', controller.user.show);
+  app.post('/post', controller.post.index);
+  app.post('/post/:id', controller.post.show);
+  app.post('/city', controller.city.index);
+  app.post('/city/:id', controller.city.show);
 
 //delete route for controllers
-app.delete('/user/:id', controller.user.delete);
-app.delete('/post/:id', controller.post.delete);
+  app.delete('/user/:id', controller.user.delete);
+  app.delete('/post/:id', controller.post.delete);
+
+//put route for controllers
+  app.put('/posts/:id', controller.post.update);
 
 }
 
 router(app);
 const server = http.createServer(app);
-server.listen(process.env.PORT || 3000);
-console.log('Server be listenin on http://localhost:3000');
+server.listen(process.env.PORT || 27017);
+console.log('Server be listenin on http://localhost:27017');
