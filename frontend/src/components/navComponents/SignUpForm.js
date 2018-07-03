@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7
 import React, { Component } from 'react'
 import { Form, Grid } from 'semantic-ui-react'
 

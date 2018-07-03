@@ -22,8 +22,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-<<<<<<< HEAD
 export default connect(mapStateToProps)(PostContainer)
-=======
-export default connect(mapStateToProps)(PostContainer)
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7

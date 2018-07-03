@@ -5,11 +5,7 @@ import CitiesList from './CitiesList'
 import PostContainer from './PostContainer'
 
 class CitiesContainer extends Component {
-<<<<<<< HEAD:frontend/src/components/profileComponents/CitiesContainer.js
 
-=======
-    
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7:frontend/src/components/profileComponents/CitiesContainer.js
     render() {
 
         return (

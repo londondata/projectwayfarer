@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react'
 
@@ -13,8 +14,5 @@ class Post extends Component {
     }
 }
 
-<<<<<<< HEAD
+
 export default Post
-=======
-export default Post
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7
