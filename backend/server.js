@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/wayfarer');
 
@@ -12,9 +12,6 @@
 // server.listen(port);
 
 // router(app);
-
-=======
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7
 const express = require('express'),
       app = express(),
       http = require('http'),

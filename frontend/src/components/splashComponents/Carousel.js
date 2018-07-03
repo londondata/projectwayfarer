@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 class HeroCarousel extends Component {
     render() {
-        console.log(this.props.cities[0].image)
         let cities = this.props.cities.map((city) => {
            return <CarouselItem city={city} />
         });
@@ -38,7 +37,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(HeroCarousel)
-<<<<<<< HEAD:frontend/src/components/splashComponents/Carousel.js
-=======
-
->>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7:frontend/src/components/splashComponents/Carousel.js
