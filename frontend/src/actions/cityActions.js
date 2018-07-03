@@ -1,13 +1,11 @@
-
 import uuid from 'uuid'
 
-export function addTodo (task) {
+export function filterPosts (city) {
   return {
-    type: 'ADD_TODO',
-    todo: {
+    type: 'FILTER_POSTS',
+    city: {
       id: uuid(),
-      task: task,
-      completed: false
+      name: city,
     }
   }
 }

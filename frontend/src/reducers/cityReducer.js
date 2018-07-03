@@ -1,4 +1,3 @@
-
 const defaultState = [
     {
         id: 0,
@@ -33,11 +32,11 @@ const defaultState = [
 ]
 
 function cities (state = defaultState, action) {
-  switch (action.type) {
+    switch (action.type) {
     default:
-    console.log(state);
-      return state
-  }
+        console.log(state);
+        return state
+    }
 }
 
 export default cities

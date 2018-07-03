@@ -1,22 +1,41 @@
-import Post from '../models/post';
-import uuid from 'uuid';
-import slug from 'limax';
-import * as db from '../models';
 
+const mongoose = require ('mongoose');
+const Post = require('../models/post.js');
+const express = require('express');
+const app = express();
 
-function getPosts (req, res) {
-  db.Post.find({}, function(err, posts) {
-    if(err){console.log(err)
-      res.sendStatus(500)}
-    res.json(posts);
+//POSTS: create
+app.post('/posts', (req, res) => {
+  let newPost = req.body;
+
+  newPost.create(newPost, (err, savedPost) => {
+    if(err) { return console.log(err) }
+    res.json(savedPost);
   });
-}
+});
 
-function createPost(req, res) {
-  // create an album based on request body and send it back as JSON
-  db.Post.create(req.body, function(err, post) {
-    if(err){res.sendStatus(500)}
-    res.json(post);
+//update
+app.put('/posts/:id', (req, res) => {
+  let postId = req.params.id;
+  let updateBody = req.body;
+
+  db.Post.findOneAndUpdate({ _id: postId }, updateBody, {new: true}, (err, updatedPost) => {
+    if(err) { return console.log(err)}
+    res.json(updatedPost);
   });
-}
+});
 
+//delete
+app.delete('/posts/:id', (req, res) => {
+  let postId = req.params.id;
+
+  db.Post.findOneAndRemove({ _id: postId }, (err, deletedPost) => {
+    res.json(deletedPost);
+  });
+});
+
+//get all posts
+app.get('/posts', (req, res) => {
+  res.send('hello!');
+  res.json(db.Post.all());
+})
