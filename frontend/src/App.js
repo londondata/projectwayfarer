@@ -4,7 +4,7 @@ import './App.css';
 import Nav from './components/navComponents/Nav'
 import Splash from './components/splashComponents/Splash'
 import CitiesContainer from './components/postComponents/CitiesContainer'
-import ProfileContainer from './components/profileComponents/ProfileContainer'
+import ProfileContainer from './components/userComponents/ProfileContainer'
 
 
 class App extends Component {
