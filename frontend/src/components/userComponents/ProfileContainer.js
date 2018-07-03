@@ -1,18 +1,19 @@
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Segment } from 'semantic-ui-react'
-import CitiesList from './CitiesList'
-import PostContainer from './PostContainer'
+import { Grid } from 'semantic-ui-react'
+import Profile from './Profile'
+import PostContainer from '../postComponents/PostContainer'
 
-class CitiesContainer extends Component {
+class ProfileContainer extends Component {
 
     render() {
-
         return (
            <main>
               <Grid stackable columns={2}>
-                 <Grid.Column width={7}>
-                   <CitiesList />
+                 <Grid.Column width={7} centered className="profile-box">
+                    <h2>Profile</h2>
+                    <Profile centered/>
                  </Grid.Column>
                  <Grid.Column width={9}>
                     <PostContainer />
@@ -23,4 +24,4 @@ class CitiesContainer extends Component {
     }
 }
 
-export default CitiesContainer
+export default ProfileContainer

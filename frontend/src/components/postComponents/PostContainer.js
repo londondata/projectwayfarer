@@ -21,4 +21,5 @@ const mapStateToProps = (state) => {
         posts: state.posts
     }
 }
+
 export default connect(mapStateToProps)(PostContainer)

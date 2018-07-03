@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import Nav from './components/navComponents/Nav'
 import Splash from './components/splashComponents/Splash'
-import CitiesContainer from './components/profileComponents/CitiesContainer'
+import CitiesContainer from './components/postComponents/CitiesContainer'
+import ProfileContainer from './components/userComponents/ProfileContainer'
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         <Nav />
         <Switch>
            <Route path="/cities" component={ CitiesContainer } />
+           <Route path="/user" component={ ProfileContainer } />
            <Route path="/" component={ Splash } />
         </Switch>
       </div>
