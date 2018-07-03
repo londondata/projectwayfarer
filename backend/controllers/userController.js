@@ -3,7 +3,6 @@ const User = require('../models/user.js');
 const express = require('express');
 const app = express();
 
-
 //USERS: create
 app.post('/users', (req, res) => {
   let newUser = req.body;
@@ -23,7 +22,6 @@ app.get('/users/:id', (req, res) => {
     res.json(foundUser);
   });
 });
-
 
 //delete
 app.delete('/users/:id', (req, res) => {
