@@ -1,8 +1,32 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
+.flex-row {
+   display: flex;
+}
+
+.flex-column {
+   display: flex;
+   flex-direction: column;
+}
+
+.caro-size {
+   margin: 0 auto;
+   width: 65vw;
+}
+
+a,
+a:visited,
+a:link,
+a:hover  {
+   color: black;
+}
+
+/* NAV & HEADER STYLES ================== */
 
 #logo {
   width: 5%;
@@ -12,15 +36,18 @@ body {
    border-radius: 0;
 }
 
-.caro-size {
-   margin: 0 auto;
-   width: 65vw;
-}
+/* CITY CONTAINER STYLES ================== */
 
 .city-box {
-   background-color: #dedede;
+   background-color: rgba(235, 234, 235, 1);
    border-radius: 1em;
    padding: .8em;
+   margin: .5em 0 0 1em;
+   transition: all ease 400ms;
+}
+
+.city-box:hover {
+   background-color: rgba(191, 101, 12, .7);
 }
 
 .city-box img {
@@ -35,8 +62,36 @@ body {
 
 .city-box img {
    height: 100px;
+   width: 192px;
 }
 
-.flex-row {
-   display: flex;
+/* POST CONTAINER STYLES ================== */
+
+.post-box {
+   border: 2px solid rgba(191, 101, 12, .7);
+   border-radius: 1em;
+   padding: .8em;
+   margin: 0 .5em .5em 0;
+   text-align: left;
+}
+
+.post-box h2, .post-box h4 {
+   margin: 0;
+}
+
+.avatar-size {
+      height: 3em;
+}
+
+/* PROFILE CONTAINER STYLES ================== */
+
+.profile-box {
+   background-color: #bf660b;
+   text-align: center;
+}
+
+.profile-box .ui.card {
+   margin: 1em auto;
+   -webkit-box-shadow: 8px 9px 17px 3px #7c4005, 0 0 0 1px #bf650c;
+           box-shadow: 8px 9px 17px 3px #7c4005, 0 0 0 1px #bf650c;
 }
