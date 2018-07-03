@@ -3,9 +3,9 @@ const mongoose = require('mongoose'),
 
 
 const UserSchema = new Schema({
-  name: String,
-  city: String,
-  joined: Date,
+  _id: {type: Number, required: true},
+  name: {type: String, required: true},
+  joined: { type: 'Date', default: Date.now, required: true },
 });
 
 const User = mongoose.model('User', UserSchema);

@@ -1,9 +1,7 @@
-const User = require('./user');
-const City = require('./city');
-const Post = require('./post');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/wayfarer');
 
+module.exports.User = require('.models/user.js')
+module.exports.City = require('.models/city.js')
+module.exports.Post = require('.models/post.js')
 
-
-exports.User = User;
-exports.City = City;
-exports.Post = Post;
