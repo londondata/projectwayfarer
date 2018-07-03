@@ -9,10 +9,9 @@ class City extends Component {
         const clickHandler = (event) => {
             event.preventDefault();
             store.dispatch({
-                type: 'FILTER_POSTS',
+                type: 'FILTER_POSTS_CITY',
                 city: this.props.city,
             })
-            console.log(this.state)
         }
         return (
             <a href="#">
@@ -27,4 +26,3 @@ class City extends Component {
 
 
 export default City
-

@@ -27,18 +27,29 @@ const defaultState = [
 
 function posts(state = defaultState, action) {
     switch (action.type) {
-        case 'FILTER_POSTS':
-            console.log("filtering posts")
-            axios.get('/api/posts')
-            .then(res => {
-                console.log(state)
-                return res.filter(res.name === action.city)
-            })
-
-        default:
-            console.log(state);
-            return state
-    }
+      case 'FILTER_POSTS_CITY':
+         console.log("filtering post by city")
+         axios.get('/api/posts')
+         .then(res => {
+             console.log(state)
+             return res.filter(res.name === action.city)
+         })
+         .then(res => {
+            console.log("updating clickedCity")
+            console.log(res.city)
+            return res.city
+         })
+      case 'FILTER_POSTS_USER':
+          console.log("filtering posts by user")
+          axios.get('/api/posts')
+          .then(res => {
+              console.log(state)
+              return res.filter(res.user === action.user)
+      })
+      default:
+         console.log(state);
+         return state
+      }
 }
 
 export default posts
