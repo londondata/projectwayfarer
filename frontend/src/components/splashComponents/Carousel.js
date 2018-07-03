@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 class HeroCarousel extends Component {
     render() {
-        console.log(this.props.cities[0].image)
         let cities = this.props.cities.map((city) => {
            return <CarouselItem city={city} />
         });
