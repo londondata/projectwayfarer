@@ -14,4 +14,8 @@ class Splash extends Component {
     }
 }
 
+<<<<<<< HEAD:frontend/src/components/splashComponents/Splash.js
 export default Splash
+=======
+export default Splash
+>>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7:frontend/src/components/splashComponents/Splash.js

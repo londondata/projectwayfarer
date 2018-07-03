@@ -38,3 +38,7 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(HeroCarousel)
+<<<<<<< HEAD:frontend/src/components/splashComponents/Carousel.js
+=======
+
+>>>>>>> e8d41d1cfe7b7dbbaae27a94316bccb19af64de7:frontend/src/components/splashComponents/Carousel.js

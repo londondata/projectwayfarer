@@ -1,6 +1,7 @@
-// controllers/index.js
 module.exports = {
-  user: require('./userController'),
+  api: require('./apiController'),
+  users: require('./userController'),
   posts: require('./postController'),
-  cities: require('./cityController')
-}
+  cities: require('./cityController'),
+};
+

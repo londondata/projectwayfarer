@@ -1,22 +1,14 @@
-import Post from '../models/post';
-import uuid from 'uuid';
-import slug from 'limax';
-import * as db from '../models';
+const mongoose = require ('mongoose');
+const City = require('../models/city.js');
+const express = require('express');
+const app = express();
 
+// get city by id
+app.get('/cities/:id', (req, res) => {
+  let cityId = req.params.id;
 
-function getPosts (req, res) {
-  db.Post.find({}, function(err, posts) {
-    if(err){console.log(err)
-      res.sendStatus(500)}
-    res.json(posts);
+  db.City.findOne({ _id: userId }, (err, foundCity) => {
+    if(err) { return console.log(err) }
+    res.json(foundCity);
   });
-}
-
-function createPost(req, res) {
-  // create an album based on request body and send it back as JSON
-  db.Post.create(req.body, function(err, post) {
-    if(err){res.sendStatus(500)}
-    res.json(post);
-  });
-}
-
+});
