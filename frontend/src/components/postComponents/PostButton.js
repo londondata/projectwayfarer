@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Modal, Icon } from 'semantic-ui-react'
 import PostForm from './PostForm'
 
 class PostButton extends Component {
@@ -7,7 +7,7 @@ class PostButton extends Component {
   render() {
 
      return(
-        <Modal trigger={<Button>(+)</Button>}>
+        <Modal trigger={<Icon name='plus circle' className='button-color' size='huge' />}>
           <Modal.Header>Select a Photo</Modal.Header>
           <Modal.Content>
             <Modal.Description>
