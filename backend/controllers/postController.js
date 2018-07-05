@@ -14,12 +14,12 @@ exports.create = (req, res) => {
 
 exports.index = (req, res) => {
   db.Post.find({})
-  .exec(function(err, posts){
+  .exec(function(err, allPosts){
     if(err) {
       console.log(err)
     }
     console.log(posts)
-    res.json(posts)
+    res.json(allPosts)
   })
 }
 

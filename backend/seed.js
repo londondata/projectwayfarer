@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/27017");
 const db = require (`./models`);
 
-function removeTheseBitches() {
+function removeAll() {
   db.User.remove({});
   db.City.remove({});
   db.Post.remove({});
 }
 
-removeTheseBitches()
+removeAll()
 
 const userList = [{
   name: "teripanda",
@@ -51,27 +51,24 @@ db.User.create ( userList, (err, newUser) => {
 
 
   db.User.findOne({})
-  .exec(function(err, fuck) {
-    console.log('====================')
-    console.log(fuck)
-    console.log('====================')
+  .exec(function(err, userValue) {
     const postList = [
         {
-            user: fuck,
+            user: userValue,
             city: 'San Francisco',
             title: 'Climbing Coit',
             body: 'Id aliquet lectus proin nibh. Aliquam sem et tortor consequat id porta nibh venenatis.',
             postCreated: Date.now(),
         },
         {
-            user: fuck,
+            user: userValue,
             city: 'San Francisco',
             title: 'Revenge of the Parrots',
             body: 'Arcu dui vivamus arcu felis bibendum. Volutpat lacus laoreet non curabitur gravida.',
             postCreated: Date.now(),
         },
         {
-            user: fuck,
+            user: userValue,
             city: 'New Orleans',
             title: 'Vieux Carre',
             body: 'In ornare quam viverra orci sagittis. Enim neque volutpat ac tincidunt vitae sempervenenatis.',
@@ -82,7 +79,7 @@ db.User.create ( userList, (err, newUser) => {
     db.Post.create ( postList, (err, posts) => {
       if(err) { return console.log(err) }
       console.log("saved new post: ", posts);
-      // Post.save()
+
       process.exit();
     });
   })
