@@ -57,12 +57,17 @@ a:hover  {
 .city-box h2 {
    font-size: 2.2em;
    align-self: center;
+   text-align: left;
    margin: 0;
 }
 
 .city-box img {
    height: 100px;
    width: 192px;
+}
+
+.nav-text-logo {
+   height: 56px;
 }
 
 /* POST CONTAINER STYLES ================== */
@@ -80,14 +85,46 @@ a:hover  {
 }
 
 .avatar-size {
-      height: 3em;
+   height: 3em;
 }
 
+.button-color {
+   color: #b96208;
+   text-align: right;
+   padding-bottom: 1.2em;
+   /* display: flex; */
+   /* width: 94%; */
+   left: 4em;
+   /* flex-direction: row-reverse; */
+}
+
+i.huge.icon {  
+   display: flex;
+   width: 94%;
+   flex-direction: row-reverse;
+}
+
+.post-title {
+   font-size: 1.5em;
+   font-weight: 400;
+   margin: 0;
+   padding-right: 1em;
+   text-transform: uppercase;
+}
+
+.post-box img {
+   width: 2em;
+}
+
+.post-header, .post-header i {
+   display: inline-block;
+}
 /* PROFILE CONTAINER STYLES ================== */
 
 .profile-box {
    background-color: #bf660b;
    text-align: center;
+   height: calc(100vh - 56px);
 }
 
 .profile-box .ui.card {

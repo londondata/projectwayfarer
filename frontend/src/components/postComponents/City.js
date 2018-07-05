@@ -5,14 +5,24 @@ import { createStore } from 'redux'
 const store = createStore(index)
 
 class City extends Component {
+
+   constructor() {
+      super();
+      this.onChange = this.onChange.bind(this);
+   }
+   onChange(event) {
+      this.setState({
+         city: event.target.value
+      })
+   }
+
     render() {
         const clickHandler = (event) => {
             event.preventDefault();
             store.dispatch({
-                type: 'FILTER_POSTS',
+                type: 'FILTER_POSTS_CITY',
                 city: this.props.city,
             })
-            console.log(this.state)
         }
         return (
             <a href="#">
@@ -27,4 +37,3 @@ class City extends Component {
 
 
 export default City
-

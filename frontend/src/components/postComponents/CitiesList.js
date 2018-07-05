@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import City from './City'
 import { connect } from 'react-redux'
+import PostModel from '../../models/Post'
 
 class CitiesList extends Component {
+
+
     render() {
 
         console.log(this.props.cities[0].image);

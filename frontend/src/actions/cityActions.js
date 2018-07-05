@@ -13,6 +13,7 @@ export function filterPostsCity (city) {
 export function filterPostsUser (userId) {
   return {
     type: 'FILTER_POSTS_USER',
+
     post:{
       id: uuid(),
       user: 'user',
@@ -21,6 +22,7 @@ export function filterPostsUser (userId) {
       body: 'body',
       postCreated: Date.now,
       comments: 'comments'
+
     }
   }
 }
