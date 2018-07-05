@@ -4,19 +4,23 @@ const express = require('express'),
       bodyparser = require('body-parser'),
       cors = require('cors'),
       mongoose = require('mongoose'),
-      router = require('router');
+      router = require('router'),
+      morgan = require('morgan');
 
 const db = require(`./models`);
 const controllers = require('./controllers');
 
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://localhost/27017');
+// mongoose.Promise = global.Promise;
+const server = http.createServer(app);
 
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyparser.json({type: '*/*'}));
-router(app);
+app.use(express.static('public'));
 
 //ROUTES
+// router(app);
 
 // HTML ENDPOINTS
 
@@ -24,34 +28,39 @@ app.get('/', function (req, res) {
   res.sendFile('test.html' , { root : __dirname});
 });
 
-
 // API ENDPOINTS
 
-//get route for controllers
-module.exports = function(app) {
-  app.get('/api', controllers.api.index);
-  app.get('/api/users', controllers.users.index);
-  app.get('/api/posts', controllers.posts.index);
-  app.get('/api/cities', controllers.cities.index);
+console.log(controllers.users.index)
 
-//post route for controllers
-  app.post('/user', controller.user.index);
-  app.post('user/:id', controller.user.show);
-  app.post('/post', controller.post.index);
-  app.post('/post/:id', controller.post.show);
-  app.post('/city', controller.city.index);
-  app.post('/city/:id', controller.city.show);
+//get route for controllers
+// module.exports = function(app) {
+  // app.get('/api', controllers.api.index);
+  app.get('/users', controllers.users.index);
+  app.get('/posts', controllers.posts.index);
+  app.get('/cities', controllers.cities.index);
+
+//get route for show controllers
+  app.get('/posts/:id', controllers.posts.show);
+  app.get('/cities/:id', controllers.cities.show);
+  app.get('users/:id', controllers.users.show);
+
+// get post routes
+  app.post('/users', controllers.users.create);
+  app.post('/posts', controllers.posts.create);
+  app.post('/cities', controllers.cities.create);
 
 //delete route for controllers
-  app.delete('/user/:id', controller.user.delete);
-  app.delete('/post/:id', controller.post.delete);
+  // app.delete('/users/:id', controllers.users.delete);
+  // app.delete('/posts/:id', controllers.posts.delete);
+  // app.delete('/cities/:id', controllers.cities.delete);
 
 //put route for controllers
-  app.put('/posts/:id', controller.post.update);
+  // app.put('/posts/:id', controllers.posts.update);
 
-}
+// }
 
-router(app);
-const server = http.createServer(app);
-server.listen(process.env.PORT || 27017);
-console.log('Server be listenin on http://localhost:27017');
+module.exports = app;
+
+const port = process.env.PORT || 8080
+server.listen(port);
+console.log(`Server be listenin on ${port}`);

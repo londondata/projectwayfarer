@@ -13,8 +13,6 @@ class App extends Component {
       <div className="App">
         <Nav />
         <Switch>
-           <Router basename={process.env.PUBLIC_URL}>
-</Router>
            <Route path="/cities" component={ CitiesContainer } />
            <Route path="/user" component={ ProfileContainer } />
            <Route path="/" component={ Splash } />

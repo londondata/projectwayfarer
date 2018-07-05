@@ -1,41 +1,34 @@
-
 const mongoose = require ('mongoose');
-const Post = require('../models/post.js');
+const db = require('../models/');
 const express = require('express');
 const app = express();
 
-//POSTS: create
-app.post('/posts', (req, res) => {
-  let newPost = req.body;
+exports.create = (req, res) => {
+  db.Post.create(req.body, function(err, createdPost) {
+    if(err) {
+      console.log(err)
+    }
+    res.json(createdPost)
+  })
+}
 
-  newPost.create(newPost, (err, savedPost) => {
+exports.index = (req, res) => {
+  db.Post.find({})
+  .exec(function(err, posts){
+    if(err) {
+      console.log(err)
+    }
+    console.log(posts)
+    res.json(posts)
+  })
+}
+
+exports.show = (req, res) => {
+  let PostId = req.params.id;
+  db.Post.findById(id)
+  .populate('posts')
+  .exec(function(err, foundPost){
     if(err) { return console.log(err) }
-    res.json(savedPost);
+    res.json(foundPost);
   });
-});
-
-//update
-app.put('/posts/:id', (req, res) => {
-  let postId = req.params.id;
-  let updateBody = req.body;
-
-  db.Post.findOneAndUpdate({ _id: postId }, updateBody, {new: true}, (err, updatedPost) => {
-    if(err) { return console.log(err)}
-    res.json(updatedPost);
-  });
-});
-
-//delete
-app.delete('/posts/:id', (req, res) => {
-  let postId = req.params.id;
-
-  db.Post.findOneAndRemove({ _id: postId }, (err, deletedPost) => {
-    res.json(deletedPost);
-  });
-});
-
-//get all posts
-app.get('/posts', (req, res) => {
-  res.send('hello!');
-  res.json(db.Post.all());
-})
+};

@@ -5,11 +5,12 @@ const mongoose = require('mongoose'),
 
 const userSchema = new Schema({
   email: {type: String, unique: true, lowercase: true},
-  password: String
-  _id: {type: Number, required: true},
+  password: {type: String, required: true},
   name: {type: String, required: true},
-  joined: { type: 'Date', default: Date.now(), required: true },
+  image: {type: String},
+  joined: { type: 'Date', default: Date.now, required: true },
   city: {type: String, required: true},
+  post: {type: Schema.Types.ObjectId, ref: 'Post'},
 });
 
 userSchema.pre('save', function (next) {

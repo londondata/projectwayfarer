@@ -5,4 +5,3 @@ module.exports = {
   cities: require('./cityController'),
   auth: require('./authController')
 };
-
