@@ -3,6 +3,7 @@ import Post from './Post'
 import { connect } from 'react-redux'
 import PostModel from '../../models/Post'
 import PostButton from './PostButton'
+import {Link} from 'react-router-dom';
 
 class PostContainer extends Component {
 
@@ -57,9 +58,11 @@ class PostContainer extends Component {
         });
         return (
             <div>
-                <h2>Posts about clickedCity.name</h2>
+                <h2 className="post-header">Posts</h2>
                 <PostButton />
-                {posts}
+                <Link to={'/user'}>
+                  {posts}
+                </Link>
             </div>
         )
     }

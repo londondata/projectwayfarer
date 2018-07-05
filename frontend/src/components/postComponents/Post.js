@@ -9,7 +9,7 @@ class Post extends Component {
             <div className='post-box flex-column'>
                <Comment.Group minimal>
                   <Comment>
-                     <Comment.Avatar as='a' src={User2} />
+                     <Comment.Avatar as='a' src={this.props.post.image} />
 
                         <Comment.Content>
                         <span className='post-title'>{this.props.post.title}</span>

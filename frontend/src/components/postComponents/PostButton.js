@@ -8,7 +8,7 @@ class PostButton extends Component {
 
      return(
         <Modal trigger={<Icon name='plus circle' className='button-color' size='huge' />}>
-          <Modal.Header>Select a Photo</Modal.Header>
+          <Modal.Header>Add a Post</Modal.Header>
           <Modal.Content>
             <Modal.Description>
               <PostForm />

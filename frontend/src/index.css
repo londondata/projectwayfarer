@@ -92,9 +92,13 @@ a:hover  {
    color: #b96208;
    text-align: right;
    padding-bottom: 1.2em;
+   /* display: flex; */
+   /* width: 94%; */
+   left: 4em;
+   /* flex-direction: row-reverse; */
 }
 
-i.huge.icon {
+i.huge.icon {  
    display: flex;
    width: 94%;
    flex-direction: row-reverse;
@@ -109,7 +113,11 @@ i.huge.icon {
 }
 
 .post-box img {
-      width: 2em;
+   width: 2em;
+}
+
+.post-header, .post-header i {
+   display: inline-block;
 }
 /* PROFILE CONTAINER STYLES ================== */
 
