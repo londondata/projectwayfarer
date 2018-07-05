@@ -5,11 +5,13 @@ const User = require('./user');
 const City = require('./city');
 
 const PostSchema = new Schema({
-  user: {type: String, ref: User, required: true},
+  user: {type: Schema.Types.ObjectId, ref: 'User', required: false},
   title: {type: String, required: true},
-  city: {type: String, ref: City, required: true},
+  city: {type: String, ref: 'City', required: true},
   body: {type: String, required: true},
+  postCreated: {type: Date, default: Date.now()},
   comments: {type: String, required: false}
+
 });
 
 const Post = mongoose.model('Post', PostSchema);

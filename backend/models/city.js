@@ -3,7 +3,8 @@ const mongoose = require ('mongoose'),
 
 const CitySchema = new Schema({
   name: {type: String, required: true},
-  image: {type: String, required: true}
+  image: {type: String, required: true},
+  post: { type: Schema.Types.ObjectId, ref: 'Post'}
 });
 
 

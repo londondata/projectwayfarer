@@ -1,26 +1,90 @@
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost/27017");
 const db = require (`./models`);
 
+function removeAll() {
+  db.User.remove({});
+  db.City.remove({});
+  db.Post.remove({});
+}
+
+removeAll()
+
 const userList = [{
-  name: "teripanda"
-  city: "Cleveland"
-  joined: "06/29/2018"
+  name: "teripanda",
+  city: "Cleveland",
+  joined: "06/29/2018",
+  email: 'teri@gmail.com',
+  password: '123',
+  image: 'https://images4.alphacoders.com/730/730203.jpg',
 },
-  name: "maxgonerogue"
-  city: "Eugene"
-  joined: "07/02/2018"
+{
+  name: "maxgonerogue",
+  city: "Eugene",
+  joined: "07/02/2018",
+  email: 'max69@gmail.com',
+  password: '123',
+  image: 'https://images4.alphacoders.com/730/730203.jpg',
 },
-  name: "oxleberry"
-  city: "Oakland"
-  joined: "07/03/2018"
+{
+  name: "oxleberry",
+  city: "Oakland",
+  joined: "07/03/2018",
+  email: 'oxle@gmail.com',
+  password: '123',
+  image: 'https://images4.alphacoders.com/730/730203.jpg',
 },
-  name: "troiboi"
-  city: "Seattle"
-  joined: "07/04/2018"
+{
+  name: "troiboi",
+  city: "Seattle",
+  joined: "07/04/2018",
+  email: 'troi@gmail.com',
+  password: '123',
+  image: 'https://images4.alphacoders.com/730/730203.jpg',
 }];
 
 db.User.create ( userList, (err, newUser) => {
   if(err) { return console.log(err) }
   console.log("saved new user: ", newUser);
+  // User.save()
+  // process.exit();
+
+
+  db.User.findOne({})
+  .exec(function(err, userValue) {
+    const postList = [
+        {
+            user: userValue,
+            city: 'San Francisco',
+            title: 'Climbing Coit',
+            body: 'Id aliquet lectus proin nibh. Aliquam sem et tortor consequat id porta nibh venenatis.',
+            postCreated: Date.now(),
+        },
+        {
+            user: userValue,
+            city: 'San Francisco',
+            title: 'Revenge of the Parrots',
+            body: 'Arcu dui vivamus arcu felis bibendum. Volutpat lacus laoreet non curabitur gravida.',
+            postCreated: Date.now(),
+        },
+        {
+            user: userValue,
+            city: 'New Orleans',
+            title: 'Vieux Carre',
+            body: 'In ornare quam viverra orci sagittis. Enim neque volutpat ac tincidunt vitae sempervenenatis.',
+            postCreated: Date.now(),
+        },
+    ];
+
+    db.Post.create ( postList, (err, posts) => {
+      if(err) { return console.log(err) }
+      console.log("saved new post: ", posts);
+
+      process.exit();
+    });
+  })
+
+
 });
 
 const cityList = [
@@ -56,7 +120,7 @@ const cityList = [
     },
     {   name: 'Oakland',
         image: 'http://www.gleninjurylaw.com/wp-content/uploads/2016/12/Oakland-1.jpg'
-    }
+    },
     {   name: 'Cleveland',
         image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZkve6vIPcAhXO6FMKHZ_3CdMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.tripsavvy.com%2Fcleveland-ohio-visitors-guide-4123340&psig=AOvVaw1Ubnz0HDsco756pub0UoLb&ust=1530725881673305'
     }
@@ -64,31 +128,6 @@ const cityList = [
 
 db.City.create ( cityList, (err, newCity) => {
   if(err) { return console.log(err) }
+  // newCity.save()
   console.log("saved new city: ", newCity);
-});
-
-const postList = [
-    {
-        city: 'San Francisco',
-        title: 'Climbing Coit',
-        user: 'Frank',
-        body: 'Id aliquet lectus proin nibh. Aliquam sem et tortor consequat id porta nibh venenatis.'
-    },
-    {
-        city: 'San Francisco',
-        title: 'Revenge of the Parrots',
-        user: 'Karen',
-        body: 'Arcu dui vivamus arcu felis bibendum. Volutpat lacus laoreet non curabitur gravida.'
-    },
-    {
-        city: 'New Orleans',
-        title: 'Vieux Carre',
-        user: 'Fred',
-        body: 'In ornare quam viverra orci sagittis. Enim neque volutpat ac tincidunt vitae sempervenenatis.'
-    },
-];
-
-db.Post.create ( postList, (err, newPost) => {
-  if(err) { return console.log(err) }
-  console.log("saved new post: ", newPost);
 });

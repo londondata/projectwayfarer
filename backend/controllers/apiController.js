@@ -1,8 +1,8 @@
 function index(req, res) {
   res.json({
     message: 'Welcome to Project Wayfarer!',
-    documentation_url: 'https://github.com/teripanda/project_wayfarer',
-    base_url: 'localhost:3000',
+    documentation_url: 'https://github.com/teripanda/projectwayfarer',
+    base_url: 'localhost:27017',
     endpoints: [
       {
         method: 'GET', path: '/api', description: 'Describes available endpoints'
